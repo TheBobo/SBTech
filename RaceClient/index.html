@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Race Events</title>
+    <link rel="stylesheet" href="../css/app.css" />
+</head>
+<body ng-app="raceApp" ng-controller="HomeController">
+       <div class="row"  style="overflow:hidden;">
+        <div class="cell-header">EventNumber</div>
+        <div class="cell-header">EventTime</div>
+        <div class="cell-header">FinishTime</div>
+        <div class="cell-header">Distance</div>
+        <div class="cell-header">Name</div>
+    </div>
+<div ng-repeat="raceEvent in raceEvents" >
+    <div class="row"  style="overflow:hidden;">
+        <div class="cell">{{raceEvent.EventNumber}}</div>
+        <div class="cell">{{raceEvent.EventTime  | date:'dd-MM-yyyy HH:mm' }}</div>
+        <div class="cell">{{raceEvent.FinishTime  | date:'dd-MM-yyyy HH:mm'}}</div>
+        <div class="cell">{{raceEvent.Distance}}</div>
+        <div class="cell">{{raceEvent.Name}}</div>
+    </div>
+    <div class=" row-nested row-nested-header" style="overflow:hidden;">
+        <div class="cell-nested clickable" ng-click="orderByName()">Dog Name 
+            <span ng-if="orderName==1">
+                asc
+            </span>
+              <span ng-if="orderName==-1">
+                  desc
+            </span>
+        </div>
+        <div class=" cell-nested clickable" ng-click="orderByOddDecimal()">Odd Decimal
+          <span ng-if="orderOddDecimal==1">
+                asc
+            </span>
+              <span ng-if="orderOddDecimal==-1">
+                  desc
+            </span>
+        </div>
+        
+    </div>
+    <div class="row" ng-repeat="dog in raceEvent.Entries" style="overflow:hidden;">
+        <div class="row-nested"   ng-class-odd="'odd'" ng-class-even="'even'" >
+        <div class="cell-nested">{{dog.Name}}</div>
+        <div class="cell-nested">{{dog.OddNumber}}</div>
+        
+        </div>
+        <div class="clear"></div>
+        </div>
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+
+
+<script src="lib/jquery.min.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular/angular-resource.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/HomeController.js"></script>
+</body>
+</html>

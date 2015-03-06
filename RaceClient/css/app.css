@@ -1,0 +1,53 @@
+html, body, div,span{
+	margin:0;
+	padding:0;
+}
+/* app css stylesheet */
+.cell-header,.cell{
+	width:200px;
+	float:left;
+	text-align:center;
+	height:20px;
+	background:#ccc;
+	margin-left:1px;
+	margin-top:1px;
+}
+
+.cell-header{
+	background:#aaa !important;
+}
+
+.row{
+	display:block;
+	width:1005px;
+}
+
+.row-nested-header{
+	background:#aaa;
+	margin-top:20px!important;
+}
+
+.row-nested{
+	display:inline-block;
+	margin-left:201px;
+}
+
+.clickable{
+	cursor:pointer;
+}
+
+.cell-nested{
+	width:200px;
+	float:left;
+	margin-left:1px;
+	text-align:center;
+}
+
+.odd{
+	background:#ccc;
+}
+.even{
+	background:#ddd;
+}
+
+	
